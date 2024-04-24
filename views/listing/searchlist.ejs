@@ -1,0 +1,28 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<body>
+    <div class="row mt-3">
+  
+        <% listings.forEach(listing => { %>
+            
+      <div class="col-8 offset-2">
+        <h1><%= listing.title %></h1>
+      </div>
+  
+      <div class="card col-6 offset-2 listing-card">
+  
+        <img src="<%= listing.image %>" class="card-img-top showimg" alt="..." />
+  
+        <div class="card-body">
+          <p class="card-text">
+            <b>Owner:</b><%= listing.owner.username %><br />
+            <b>Description:</b><%= listing.description %> <br />
+            <b>Price:</b>&#8377;<%= listing.price.toLocaleString("en-IN") %> / night <br />
+            <b>Location:</b><%= listing.location %> <br />
+            <b>Country:</b><%= listing.country %> <br />
+          </p>
+        </div>
+        </div>
+        </div>
+        <% }) %>
+        </body>

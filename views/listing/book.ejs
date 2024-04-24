@@ -1,0 +1,18 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+  <form action="/listings/<%= listing._id %>/book" method="post"> <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" name="name" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your name with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Email</label>
+      <input type="email" class="form-control" id="exampleInputPassword1" name="number">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Amount</label>
+      <input type="text" class="form-control pay-input" id="exampleInputPassword1" value="&#8377;<%= listing.price.toLocaleString("en-IN") %>" disabled="true">
+    </div>
+    <button>Pay Now</button>
+  </form>
+</body>
