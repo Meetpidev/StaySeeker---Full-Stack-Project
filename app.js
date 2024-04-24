@@ -78,10 +78,10 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.get("/", (req, res) => {
-    console.log("Working...");
-    res.send("the first page");
-});
+// app.get("/", (req, res) => {
+//     console.log("Working...");
+//     res.send("the first page");
+// });
 
 app.use((req, res, next) => {
     res.locals.success = req.flash("success");
