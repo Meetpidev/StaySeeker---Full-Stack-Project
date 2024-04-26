@@ -21,7 +21,7 @@ const multer = require("multer");
 const { storage } = require("./cloudConfig.js");
 const upload = multer({ storage });
 const path = require("path");
-const port = 6080;
+const port = 8080;
 
 if (process.env.NODE_ENV != "production") {
     require('dotenv').config();
