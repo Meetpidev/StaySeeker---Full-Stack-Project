@@ -30,23 +30,20 @@
         </form>
 
       </div>
-        
-      <% if (currUser) { %>
-        <% if (currUser && currUser._id) {  // Check if _id exists  %>
-          <% if(currUser._id.equals(listing.owner._id)) { %>
-            <div style="display: flex" class="btns pdl=2">
-              <a href="/listing/<%= listing._id %>/edit" class="btn btn-dark btn-dark add-btn offdet-2">Edit</a>
-            </div>
-          <% } %>
-        <% } %>
-      <% } %>
- 
+      <% if (currUser && listing.owner) { %>
+        <% if (listing.owner._id.equals(res.locals.currUser._id)) { %>
+          <div style="display: flex" class="btns pdl=2">
+            <a href="/listing/<%= listing._id %>/edit" class="btn btn-dark btn-dark add-btn offdet-2">Edit</a>
+          </div>
+
         <form
           action="/listings/<%= listing._id %>?_method=DELETE"
           method="post"
         >
           <button class="btn btn-dark offdet-7">Delete</button>
         </form>
+        <% } %>
+      <% } %>
       </div>
 
 <!-------------------------------- Review ------------------------------------>
@@ -105,17 +102,19 @@
           </div>
         </div>
 
-          <% if(currUser && listing.owner._id.equals(currUser._id)) { %>
-
+        <% if (currUser && listing.owner) { %>
+          <% if (listing.owner._id.equals(res.locals.currUser._id)) { %>
+           
           <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" method="post" class="md-3">
             <button class="btn btn-sm btn-dark">Delete</button>
           </form>
 
       </div>
       <% } %>
-
       <% } %>
       <% } %>
+      <% } %>
+     
       </div>
   </div>
   
