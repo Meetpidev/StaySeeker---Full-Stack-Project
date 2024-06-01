@@ -30,7 +30,7 @@
         </form>
 
       </div>
-      <% if(currUser && listing.owner._id.equals(currUser._id)) { %>
+      <% if(currUser && listing._id.equals(currUser._id)) { %>
           <div style="display: flex" class="btns pdl=2">
             <a href="/listing/<%= listing._id %>/edit" class="btn btn-dark btn-dark add-btn offdet-2">Edit</a>
           </div>
